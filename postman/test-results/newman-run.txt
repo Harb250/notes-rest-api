@@ -1,4 +1,4 @@
-(node:23968) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
+(node:34896) [DEP0176] DeprecationWarning: fs.F_OK is deprecated, use fs.constants.F_OK instead
 (Use `node --trace-deprecation ...` to show where the warning was created)
 newman
 
@@ -6,73 +6,73 @@ Notes REST API
 
 □ 0 · Health
 └ Health check
-  GET http://localhost:3000/api/health [200 OK, 333B, 41ms]
+  GET http://localhost:3000/api/health [200 OK, 333B, 43ms]
   √  Status is 200
   √  Database is connected
 
 □ 1 · Auth (signup & login)
 └ Signup – Alice (201)
-  POST http://localhost:3000/api/auth/signup [201 Created, 571B, 269ms]
+  POST http://localhost:3000/api/auth/signup [201 Created, 571B, 1109ms]
   √  Status is 201
   √  Returns a JWT (three parts, two dots)
   √  Returns the user without the hash
 
 └ Signup – Bob (201)
-  POST http://localhost:3000/api/auth/signup [201 Created, 569B, 254ms]
+  POST http://localhost:3000/api/auth/signup [201 Created, 569B, 1123ms]
   √  Status is 201
 
 └ Signup – email already registered (409)
-  POST http://localhost:3000/api/auth/signup [409 Conflict, 343B, 7ms]
+  POST http://localhost:3000/api/auth/signup [409 Conflict, 343B, 418ms]
   √  Status is 409
   √  Error message is "Email already registered"
 
 └ Signup – missing email, short password (400)
-  POST http://localhost:3000/api/auth/signup [400 Bad Request, 432B, 9ms]
+  POST http://localhost:3000/api/auth/signup [400 Bad Request, 432B, 5ms]
   √  Status is 400
   √  Error message is "Validation failed"
   √  details.email explains the problem
   √  details.password explains the problem
 
 └ Signup – malformed JSON (400)
-  POST http://localhost:3000/api/auth/signup [400 Bad Request, 352B, 9ms]
+  POST http://localhost:3000/api/auth/signup [400 Bad Request, 352B, 6ms]
   √  Status is 400
   √  Error message is "Malformed JSON in request body"
 
 └ Login – Alice (200)
-  POST http://localhost:3000/api/auth/login [200 OK, 566B, 274ms]
+  POST http://localhost:3000/api/auth/login [200 OK, 566B, 637ms]
   √  Status is 200
   √  Returns a JWT
   √  Returns the same user id as signup
 
 └ Login – wrong password (401)
-  POST http://localhost:3000/api/auth/login [401 Unauthorized, 348B, 270ms]
+  POST http://localhost:3000/api/auth/login [401 Unauthorized, 348B, 671ms]
   √  Status is 401
   √  Error message is "Invalid email or password"
 
 └ Login – unknown email (401, same message)
-  POST http://localhost:3000/api/auth/login [401 Unauthorized, 348B, 5ms]
+  POST http://localhost:3000/api/auth/login [401 Unauthorized, 348B, 374ms]
   √  Status is 401
   √  Error message is "Invalid email or password"
 
 └ Login – NoSQL injection attempt (400)
-  POST http://localhost:3000/api/auth/login [400 Bad Request, 414B, 5ms]
+  POST http://localhost:3000/api/auth/login [400 Bad Request, 414B, 8ms]
   √  Status is 400
   √  details.email explains the problem
   √  details.password explains the problem
 
 □ 2 · Notes CRUD (Alice)
 └ List notes – no token (401)
-  GET http://localhost:3000/api/notes [401 Unauthorized, 336B, 5ms]
+  GET http://localhost:3000/api/notes [401 Unauthorized, 336B, 6ms]
   √  Status is 401
   √  Error message is "Missing token"
 
 └ List notes – invalid token (401)
-  GET http://localhost:3000/api/notes [401 Unauthorized, 347B, 2ms]
+  GET http://localhost:3000/api/notes [401 Unauthorized, 347B, 8ms]
   √  Status is 401
   √  Error message is "Invalid or expired token"
 
 └ Create note (201)
-  POST http://localhost:3000/api/notes [201 Created, 542B, 13ms]
+  POST http://localhost:3000/api/notes [201 Created, 542B, 390ms]
   √  Status is 201
   √  Note has the submitted fields
   √  Tags are cleaned
@@ -80,13 +80,13 @@ Notes REST API
   √  Server sets _id and timestamps
 
 └ Create note – defaults applied (201)
-  POST http://localhost:3000/api/notes [201 Created, 495B, 9ms]
+  POST http://localhost:3000/api/notes [201 Created, 495B, 373ms]
   √  Status is 201
   √  Title is trimmed
   √  body defaults to "" and tags to []
 
 └ Create note – validation errors (400)
-  POST http://localhost:3000/api/notes [400 Bad Request, 484B, 9ms]
+  POST http://localhost:3000/api/notes [400 Bad Request, 484B, 7ms]
   √  Status is 400
   √  Error message is "Validation failed"
   √  details.title explains the problem
@@ -94,187 +94,187 @@ Notes REST API
   √  details.tags explains the problem
 
 └ Create note – malformed JSON (400)
-  POST http://localhost:3000/api/notes [400 Bad Request, 352B, 4ms]
+  POST http://localhost:3000/api/notes [400 Bad Request, 352B, 7ms]
   √  Status is 400
   √  Error message is "Malformed JSON in request body"
 
 └ Create note – array instead of object (400)
-  POST http://localhost:3000/api/notes [400 Bad Request, 395B, 4ms]
+  POST http://localhost:3000/api/notes [400 Bad Request, 395B, 7ms]
   √  Status is 400
   √  details.body explains the problem
 
 └ List notes (200)
-  GET http://localhost:3000/api/notes [200 OK, 729B, 11ms]
+  GET http://localhost:3000/api/notes [200 OK, 729B, 411ms]
   √  Status is 200
   √  Returns only Alice's 2 notes
   √  Newest first by default
 
 └ List notes – ?search (200)
-  GET http://localhost:3000/api/notes?search=EXAM [200 OK, 539B, 7ms]
+  GET http://localhost:3000/api/notes?search=EXAM [200 OK, 539B, 430ms]
   √  Status is 200
   √  Finds the matching note only
 
 └ List notes – ?tag (200)
-  GET http://localhost:3000/api/notes?tag=week9 [200 OK, 539B, 7ms]
+  GET http://localhost:3000/api/notes?tag=week9 [200 OK, 539B, 377ms]
   √  Status is 200
   √  Only notes with that tag
 
 └ List notes – ?sort=oldest&limit=1 (200)
-  GET http://localhost:3000/api/notes?sort=oldest&limit=1 [200 OK, 539B, 9ms]
+  GET http://localhost:3000/api/notes?sort=oldest&limit=1 [200 OK, 539B, 402ms]
   √  Status is 200
   √  Oldest note only
 
 └ List notes – regex characters are searched literally (200)
-  GET http://localhost:3000/api/notes?search=%28c%2B%2B [200 OK, 301B, 6ms]
+  GET http://localhost:3000/api/notes?search=%28c%2B%2B [200 OK, 301B, 394ms]
   √  Status is 200
   √  No matches
 
 └ List notes – invalid query (400)
-  GET http://localhost:3000/api/notes?sort=random&limit=0 [400 Bad Request, 452B, 5ms]
+  GET http://localhost:3000/api/notes?sort=random&limit=0 [400 Bad Request, 452B, 7ms]
   √  Status is 400
   √  Error message is "Validation failed"
   √  details.sort explains the problem
   √  details.limit explains the problem
 
 └ Get note by id (200)
-  GET http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [200 OK, 537B, 13ms]
+  GET http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [200 OK, 537B, 391ms]
   √  Status is 200
   √  Returns the requested note
 
 └ Get note – invalid id (400)
-  GET http://localhost:3000/api/notes/not-a-valid-id [400 Bad Request, 337B, 5ms]
+  GET http://localhost:3000/api/notes/not-a-valid-id [400 Bad Request, 337B, 3ms]
   √  Status is 400
   √  Error message is "Invalid note id"
 
 └ Get note – does not exist (404)
-  GET http://localhost:3000/api/notes/000000000000000000000000 [404 Not Found, 334B, 6ms]
+  GET http://localhost:3000/api/notes/000000000000000000000000 [404 Not Found, 334B, 428ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Replace note – PUT (200)
-  PUT http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [200 OK, 522B, 22ms]
+  PUT http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [200 OK, 522B, 419ms]
   √  Status is 200
   √  Returns the new version
 
 └ Replace note – PUT resets missing fields (200)
-  PUT http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [200 OK, 495B, 8ms]
+  PUT http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [200 OK, 495B, 394ms]
   √  Status is 200
   √  Missing body and tags are gone
   √  Owner is still Alice
 
 └ Update note – PATCH body and tags (200)
-  PATCH http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [200 OK, 523B, 8ms]
+  PATCH http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [200 OK, 523B, 405ms]
   √  Status is 200
   √  Sent fields changed
   √  Title left alone
 
 └ Update note – PATCH title only keeps body (200)
-  PATCH http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [200 OK, 526B, 8ms]
+  PATCH http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [200 OK, 526B, 1145ms]
   √  Status is 200
   √  Title changed
   √  Body and tags kept
 
 └ Replace note – PUT without title (400)
-  PUT http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [400 Bad Request, 411B, 6ms]
+  PUT http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [400 Bad Request, 411B, 4ms]
   √  Status is 400
   √  Error message is "Validation failed"
   √  details.title explains the problem
 
 └ Update note – PATCH with no fields (400)
-  PATCH http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [400 Bad Request, 400B, 4ms]
+  PATCH http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [400 Bad Request, 400B, 7ms]
   √  Status is 400
   √  Error message is "Validation failed"
   √  details.body explains the problem
 
 └ Update note – PATCH empty title (400)
-  PATCH http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [400 Bad Request, 411B, 7ms]
+  PATCH http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [400 Bad Request, 411B, 7ms]
   √  Status is 400
   √  details.title explains the problem
 
 └ Replace note – PUT does not exist (404)
-  PUT http://localhost:3000/api/notes/000000000000000000000000 [404 Not Found, 334B, 7ms]
+  PUT http://localhost:3000/api/notes/000000000000000000000000 [404 Not Found, 334B, 424ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Update note – PATCH does not exist (404)
-  PATCH http://localhost:3000/api/notes/000000000000000000000000 [404 Not Found, 334B, 9ms]
+  PATCH http://localhost:3000/api/notes/000000000000000000000000 [404 Not Found, 334B, 387ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 □ 3 · Authorization (Bob vs Alice's note)
 └ Bob – list notes sees only his own (200)
-  GET http://localhost:3000/api/notes [200 OK, 301B, 12ms]
+  GET http://localhost:3000/api/notes [200 OK, 301B, 404ms]
   √  Status is 200
   √  Bob has no notes
 
 └ Bob – GET Alice's note (404)
-  GET http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [404 Not Found, 334B, 5ms]
+  GET http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [404 Not Found, 334B, 444ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Bob – PUT Alice's note (404)
-  PUT http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [404 Not Found, 334B, 13ms]
+  PUT http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [404 Not Found, 334B, 437ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Bob – PATCH Alice's note (404)
-  PATCH http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [404 Not Found, 334B, 7ms]
+  PATCH http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [404 Not Found, 334B, 417ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Bob – DELETE Alice's note (404)
-  DELETE http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [404 Not Found, 334B, 5ms]
+  DELETE http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [404 Not Found, 334B, 425ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Alice – note unchanged after Bob tried (200)
-  GET http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [200 OK, 526B, 12ms]
+  GET http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [200 OK, 526B, 388ms]
   √  Status is 200
   √  Title was not changed by Bob
 
 □ 4 · Delete
 └ Delete note (204)
-  DELETE http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [204 No Content, 200B, 7ms]
+  DELETE http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [204 No Content, 200B, 370ms]
   √  Status is 204
   √  No body
 
 └ Get deleted note (404)
-  GET http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [404 Not Found, 334B, 6ms]
+  GET http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [404 Not Found, 334B, 353ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Delete again (404)
-  DELETE http://localhost:3000/api/notes/6aecc9eb52896ecb409a2160 [404 Not Found, 334B, 10ms]
+  DELETE http://localhost:3000/api/notes/6aeda092f446885e947cf1b7 [404 Not Found, 334B, 405ms]
   √  Status is 404
   √  Error message is "Note not found"
 
 └ Delete – invalid id (400)
-  DELETE http://localhost:3000/api/notes/123 [400 Bad Request, 337B, 4ms]
+  DELETE http://localhost:3000/api/notes/123 [400 Bad Request, 337B, 5ms]
   √  Status is 400
   √  Error message is "Invalid note id"
 
 □ 5 · Unknown routes
 └ Unknown route (404)
-  GET http://localhost:3000/api/does-not-exist [404 Not Found, 360B, 3ms]
+  GET http://localhost:3000/api/does-not-exist [404 Not Found, 360B, 6ms]
   √  Status is 404
   √  JSON error body
 
-┌─────────────────────────┬───────────────────┬──────────────────┐
-│                         │          executed │           failed │
-├─────────────────────────┼───────────────────┼──────────────────┤
-│              iterations │                 1 │                0 │
-├─────────────────────────┼───────────────────┼──────────────────┤
-│                requests │                46 │                0 │
-├─────────────────────────┼───────────────────┼──────────────────┤
-│            test-scripts │                46 │                0 │
-├─────────────────────────┼───────────────────┼──────────────────┤
-│      prerequest-scripts │                 1 │                0 │
-├─────────────────────────┼───────────────────┼──────────────────┤
-│              assertions │               111 │                0 │
-├─────────────────────────┴───────────────────┴──────────────────┤
-│ total run duration: 5.2s                                       │
-├────────────────────────────────────────────────────────────────┤
-│ total data received: 5.21kB (approx)                           │
-├────────────────────────────────────────────────────────────────┤
-│ average response time: 30ms [min: 2ms, max: 274ms, s.d.: 73ms] │
-└────────────────────────────────────────────────────────────────┘
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                 46 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                 46 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                111 │                  0 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 18.2s                                         │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 5.21kB (approx)                              │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 323ms [min: 3ms, max: 1145ms, s.d.: 291ms] │
+└───────────────────────────────────────────────────────────────────┘

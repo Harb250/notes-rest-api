@@ -433,8 +433,8 @@ npm run test:api
 
 ### Test evidence
 
-[`postman/test-results/`](postman/test-results/) holds a saved run of the full collection against a real
-MongoDB database — **46 requests, 111 assertions, 0 failures**:
+[`postman/test-results/`](postman/test-results/) holds a saved run of the full collection against the
+MongoDB Atlas database — **46 requests, 111 assertions, 0 failures**:
 
 - `newman-run.txt` — the console output: every request, its status code and each test result
 - `newman-junit.xml` — the same results in JUnit format
@@ -485,6 +485,7 @@ curl -i -X DELETE http://localhost:3000/api/notes/NOTE_ID -H "Authorization: Bea
 |---|---|
 | `Missing MONGODB_URI or JWT_SECRET` on start | `.env` is missing or incomplete — copy `.env.example` to `.env` and fill it in |
 | `DB connection failed: ... timed out` | Your IP isn't allowed in Atlas → *Network Access* → add your current IP |
-| `DB connection failed: bad auth` | Wrong database user or password in `MONGODB_URI` (URL-encode special characters in the password) |
+| `DB connection failed: bad auth` | Wrong database user or password in `MONGODB_URI`. Remove the `< >` placeholders around them, and URL-encode special characters in the password |
+| `DB connection failed: querySrv ECONNREFUSED` | Node can't do the DNS SRV lookup that `mongodb+srv://` needs (common on some Windows/campus networks). Use the standard form instead: `mongodb://USER:PASS@<shard-00-00>:27017,<shard-00-01>:27017,<shard-00-02>:27017/notes-api?tls=true&replicaSet=<replica-set>&authSource=admin` — the host names come from `nslookup -type=SRV _mongodb._tcp.<cluster-host>` and the replica set name from `nslookup -type=TXT <cluster-host>` |
 | Always `401` | The header must be exactly `Authorization: Bearer <token>`; tokens expire after 1 hour — log in again |
 | Browser shows a CORS error | Set `CLIENT_ORIGIN` to the front end's exact origin (no trailing `/`) and restart |

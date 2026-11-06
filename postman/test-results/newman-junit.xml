@@ -1,206 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Notes REST API" tests="46" time="1.421">
-  <testsuite name="0 · Health / Health check" id="ccc3f73f-cd5f-468c-96dd-f824942405b9" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.041">
-    <testcase name="Status is 200" time="0.041" classname="0HealthHealthCheck"/>
-    <testcase name="Database is connected" time="0.041" classname="0HealthHealthCheck"/>
+<testsuites name="Notes REST API" tests="46" time="14.881">
+  <testsuite name="0 · Health / Health check" id="2940ea8c-4f8c-4d39-8695-296e6506fa6a" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.043">
+    <testcase name="Status is 200" time="0.043" classname="0HealthHealthCheck"/>
+    <testcase name="Database is connected" time="0.043" classname="0HealthHealthCheck"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Signup – Alice (201)" id="c89c4174-4b4a-4cf9-8dd8-0c9483bd33c1" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.269">
-    <testcase name="Status is 201" time="0.269" classname="1AuthSignupAmpLoginSignupAlice201"/>
-    <testcase name="Returns a JWT (three parts, two dots)" time="0.269" classname="1AuthSignupAmpLoginSignupAlice201"/>
-    <testcase name="Returns the user without the hash" time="0.269" classname="1AuthSignupAmpLoginSignupAlice201"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Signup – Alice (201)" id="d6458a22-8735-49ad-bdc8-bd3e4909e9fd" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="1.109">
+    <testcase name="Status is 201" time="1.109" classname="1AuthSignupAmpLoginSignupAlice201"/>
+    <testcase name="Returns a JWT (three parts, two dots)" time="1.109" classname="1AuthSignupAmpLoginSignupAlice201"/>
+    <testcase name="Returns the user without the hash" time="1.109" classname="1AuthSignupAmpLoginSignupAlice201"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Signup – Bob (201)" id="981f19be-6692-494b-a52c-de6910286b15" timestamp="2026-11-05T18:24:40.952Z" tests="1" failures="0" errors="0" time="0.254">
-    <testcase name="Status is 201" time="0.254" classname="1AuthSignupAmpLoginSignupBob201"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Signup – Bob (201)" id="36e0b1b5-ecb3-4ba3-8385-83f0687d24d5" timestamp="2026-11-06T09:40:28.945Z" tests="1" failures="0" errors="0" time="1.123">
+    <testcase name="Status is 201" time="1.123" classname="1AuthSignupAmpLoginSignupBob201"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Signup – email already registered (409)" id="42fe6f37-2fff-4615-aee6-76aaacc31cd1" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.007">
-    <testcase name="Status is 409" time="0.007" classname="1AuthSignupAmpLoginSignupEmailAlreadyRegistered409"/>
-    <testcase name="Error message is &quot;Email already registered&quot;" time="0.007" classname="1AuthSignupAmpLoginSignupEmailAlreadyRegistered409"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Signup – email already registered (409)" id="5ad07204-fb86-4427-bf60-d8023ec1c404" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.418">
+    <testcase name="Status is 409" time="0.418" classname="1AuthSignupAmpLoginSignupEmailAlreadyRegistered409"/>
+    <testcase name="Error message is &quot;Email already registered&quot;" time="0.418" classname="1AuthSignupAmpLoginSignupEmailAlreadyRegistered409"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Signup – missing email, short password (400)" id="9770f9cc-7f8a-4a35-836a-1f411b67d2b9" timestamp="2026-11-05T18:24:40.952Z" tests="4" failures="0" errors="0" time="0.009">
-    <testcase name="Status is 400" time="0.009" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
-    <testcase name="Error message is &quot;Validation failed&quot;" time="0.009" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
-    <testcase name="details.email explains the problem" time="0.009" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
-    <testcase name="details.password explains the problem" time="0.009" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Signup – missing email, short password (400)" id="860e79c4-5ff8-4afe-aeac-558862ccdcab" timestamp="2026-11-06T09:40:28.945Z" tests="4" failures="0" errors="0" time="0.005">
+    <testcase name="Status is 400" time="0.005" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
+    <testcase name="Error message is &quot;Validation failed&quot;" time="0.005" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
+    <testcase name="details.email explains the problem" time="0.005" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
+    <testcase name="details.password explains the problem" time="0.005" classname="1AuthSignupAmpLoginSignupMissingEmailShortPassword400"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Signup – malformed JSON (400)" id="e3d5208c-64c8-4fa9-9f5b-0aad724f6276" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.009">
-    <testcase name="Status is 400" time="0.009" classname="1AuthSignupAmpLoginSignupMalformedJson400"/>
-    <testcase name="Error message is &quot;Malformed JSON in request body&quot;" time="0.009" classname="1AuthSignupAmpLoginSignupMalformedJson400"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Signup – malformed JSON (400)" id="28ab6316-5ded-4d95-8f17-c73cc49a0c8d" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="Status is 400" time="0.006" classname="1AuthSignupAmpLoginSignupMalformedJson400"/>
+    <testcase name="Error message is &quot;Malformed JSON in request body&quot;" time="0.006" classname="1AuthSignupAmpLoginSignupMalformedJson400"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Login – Alice (200)" id="4304fdd1-bef0-4297-ba9d-2300f5181d2c" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.274">
-    <testcase name="Status is 200" time="0.274" classname="1AuthSignupAmpLoginLoginAlice200"/>
-    <testcase name="Returns a JWT" time="0.274" classname="1AuthSignupAmpLoginLoginAlice200"/>
-    <testcase name="Returns the same user id as signup" time="0.274" classname="1AuthSignupAmpLoginLoginAlice200"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Login – Alice (200)" id="56292c7a-65c6-4ce3-b86b-3b2016e4d99a" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.637">
+    <testcase name="Status is 200" time="0.637" classname="1AuthSignupAmpLoginLoginAlice200"/>
+    <testcase name="Returns a JWT" time="0.637" classname="1AuthSignupAmpLoginLoginAlice200"/>
+    <testcase name="Returns the same user id as signup" time="0.637" classname="1AuthSignupAmpLoginLoginAlice200"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Login – wrong password (401)" id="bcde9cfa-c970-4e48-b735-a9612995de3b" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.270">
-    <testcase name="Status is 401" time="0.270" classname="1AuthSignupAmpLoginLoginWrongPassword401"/>
-    <testcase name="Error message is &quot;Invalid email or password&quot;" time="0.270" classname="1AuthSignupAmpLoginLoginWrongPassword401"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Login – wrong password (401)" id="3e8ab38b-d570-46a6-80a8-77f719e7d13b" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.671">
+    <testcase name="Status is 401" time="0.671" classname="1AuthSignupAmpLoginLoginWrongPassword401"/>
+    <testcase name="Error message is &quot;Invalid email or password&quot;" time="0.671" classname="1AuthSignupAmpLoginLoginWrongPassword401"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Login – unknown email (401, same message)" id="5366aae5-8129-4a8c-97c5-d3ef38af6b99" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.005">
-    <testcase name="Status is 401" time="0.005" classname="1AuthSignupAmpLoginLoginUnknownEmail401SameMessage"/>
-    <testcase name="Error message is &quot;Invalid email or password&quot;" time="0.005" classname="1AuthSignupAmpLoginLoginUnknownEmail401SameMessage"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Login – unknown email (401, same message)" id="a2bbeeed-1056-469a-bb4f-6217642f6474" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.374">
+    <testcase name="Status is 401" time="0.374" classname="1AuthSignupAmpLoginLoginUnknownEmail401SameMessage"/>
+    <testcase name="Error message is &quot;Invalid email or password&quot;" time="0.374" classname="1AuthSignupAmpLoginLoginUnknownEmail401SameMessage"/>
   </testsuite>
-  <testsuite name="1 · Auth (signup &amp; login) / Login – NoSQL injection attempt (400)" id="c03fdc94-f675-47d4-86e8-818128ede58c" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.005">
-    <testcase name="Status is 400" time="0.005" classname="1AuthSignupAmpLoginLoginNoSqlInjectionAttempt400"/>
-    <testcase name="details.email explains the problem" time="0.005" classname="1AuthSignupAmpLoginLoginNoSqlInjectionAttempt400"/>
-    <testcase name="details.password explains the problem" time="0.005" classname="1AuthSignupAmpLoginLoginNoSqlInjectionAttempt400"/>
+  <testsuite name="1 · Auth (signup &amp; login) / Login – NoSQL injection attempt (400)" id="ec21293a-632f-4181-85f3-47fcb89fb180" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.008">
+    <testcase name="Status is 400" time="0.008" classname="1AuthSignupAmpLoginLoginNoSqlInjectionAttempt400"/>
+    <testcase name="details.email explains the problem" time="0.008" classname="1AuthSignupAmpLoginLoginNoSqlInjectionAttempt400"/>
+    <testcase name="details.password explains the problem" time="0.008" classname="1AuthSignupAmpLoginLoginNoSqlInjectionAttempt400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes – no token (401)" id="0aed7adb-3039-4c7e-97b2-0c16e9119ecb" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.005">
-    <testcase name="Status is 401" time="0.005" classname="2NotesCrudAliceListNotesNoToken401"/>
-    <testcase name="Error message is &quot;Missing token&quot;" time="0.005" classname="2NotesCrudAliceListNotesNoToken401"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes – no token (401)" id="75666bfb-7d5f-408d-8615-4e1980938ebf" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="Status is 401" time="0.006" classname="2NotesCrudAliceListNotesNoToken401"/>
+    <testcase name="Error message is &quot;Missing token&quot;" time="0.006" classname="2NotesCrudAliceListNotesNoToken401"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes – invalid token (401)" id="ea0d5307-ec19-4bb9-8d36-d4281a775b4b" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.002">
-    <testcase name="Status is 401" time="0.002" classname="2NotesCrudAliceListNotesInvalidToken401"/>
-    <testcase name="Error message is &quot;Invalid or expired token&quot;" time="0.002" classname="2NotesCrudAliceListNotesInvalidToken401"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes – invalid token (401)" id="6d2b62b9-ad5a-46fa-bbf7-539b1ae7689c" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.008">
+    <testcase name="Status is 401" time="0.008" classname="2NotesCrudAliceListNotesInvalidToken401"/>
+    <testcase name="Error message is &quot;Invalid or expired token&quot;" time="0.008" classname="2NotesCrudAliceListNotesInvalidToken401"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Create note (201)" id="0e7d47de-3f28-4cd3-a3dc-6c7bcb443013" timestamp="2026-11-05T18:24:40.952Z" tests="5" failures="0" errors="0" time="0.013">
-    <testcase name="Status is 201" time="0.013" classname="2NotesCrudAliceCreateNote201"/>
-    <testcase name="Note has the submitted fields" time="0.013" classname="2NotesCrudAliceCreateNote201"/>
-    <testcase name="Tags are cleaned" time="0.013" classname="2NotesCrudAliceCreateNote201"/>
-    <testcase name="Owner comes from the token" time="0.013" classname="2NotesCrudAliceCreateNote201"/>
-    <testcase name="Server sets _id and timestamps" time="0.013" classname="2NotesCrudAliceCreateNote201"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Create note (201)" id="774cec77-a261-4178-92e8-803879b6654a" timestamp="2026-11-06T09:40:28.945Z" tests="5" failures="0" errors="0" time="0.390">
+    <testcase name="Status is 201" time="0.390" classname="2NotesCrudAliceCreateNote201"/>
+    <testcase name="Note has the submitted fields" time="0.390" classname="2NotesCrudAliceCreateNote201"/>
+    <testcase name="Tags are cleaned" time="0.390" classname="2NotesCrudAliceCreateNote201"/>
+    <testcase name="Owner comes from the token" time="0.390" classname="2NotesCrudAliceCreateNote201"/>
+    <testcase name="Server sets _id and timestamps" time="0.390" classname="2NotesCrudAliceCreateNote201"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Create note – defaults applied (201)" id="33c60729-d510-44ea-a43b-d62df9757899" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.009">
-    <testcase name="Status is 201" time="0.009" classname="2NotesCrudAliceCreateNoteDefaultsApplied201"/>
-    <testcase name="Title is trimmed" time="0.009" classname="2NotesCrudAliceCreateNoteDefaultsApplied201"/>
-    <testcase name="body defaults to &quot;&quot; and tags to []" time="0.009" classname="2NotesCrudAliceCreateNoteDefaultsApplied201"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Create note – defaults applied (201)" id="8e29e3f4-faf0-4e78-acfc-44fcb59b87bc" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.373">
+    <testcase name="Status is 201" time="0.373" classname="2NotesCrudAliceCreateNoteDefaultsApplied201"/>
+    <testcase name="Title is trimmed" time="0.373" classname="2NotesCrudAliceCreateNoteDefaultsApplied201"/>
+    <testcase name="body defaults to &quot;&quot; and tags to []" time="0.373" classname="2NotesCrudAliceCreateNoteDefaultsApplied201"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Create note – validation errors (400)" id="e6412d19-b570-4552-a1fc-ee3910e22a89" timestamp="2026-11-05T18:24:40.952Z" tests="5" failures="0" errors="0" time="0.009">
-    <testcase name="Status is 400" time="0.009" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
-    <testcase name="Error message is &quot;Validation failed&quot;" time="0.009" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
-    <testcase name="details.title explains the problem" time="0.009" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
-    <testcase name="details.body explains the problem" time="0.009" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
-    <testcase name="details.tags explains the problem" time="0.009" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Create note – validation errors (400)" id="87a019c7-36e4-4dfd-9f39-2e926fc6e26f" timestamp="2026-11-06T09:40:28.945Z" tests="5" failures="0" errors="0" time="0.007">
+    <testcase name="Status is 400" time="0.007" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
+    <testcase name="Error message is &quot;Validation failed&quot;" time="0.007" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
+    <testcase name="details.title explains the problem" time="0.007" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
+    <testcase name="details.body explains the problem" time="0.007" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
+    <testcase name="details.tags explains the problem" time="0.007" classname="2NotesCrudAliceCreateNoteValidationErrors400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Create note – malformed JSON (400)" id="e2390223-7ef0-46f9-bfbc-6044e6c082c5" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.004">
-    <testcase name="Status is 400" time="0.004" classname="2NotesCrudAliceCreateNoteMalformedJson400"/>
-    <testcase name="Error message is &quot;Malformed JSON in request body&quot;" time="0.004" classname="2NotesCrudAliceCreateNoteMalformedJson400"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Create note – malformed JSON (400)" id="85d7d88c-eca8-49ac-a909-6e71f3011597" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.007">
+    <testcase name="Status is 400" time="0.007" classname="2NotesCrudAliceCreateNoteMalformedJson400"/>
+    <testcase name="Error message is &quot;Malformed JSON in request body&quot;" time="0.007" classname="2NotesCrudAliceCreateNoteMalformedJson400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Create note – array instead of object (400)" id="41c632a8-f6a9-4474-a362-e8935289d14f" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.004">
-    <testcase name="Status is 400" time="0.004" classname="2NotesCrudAliceCreateNoteArrayInsteadOfObject400"/>
-    <testcase name="details.body explains the problem" time="0.004" classname="2NotesCrudAliceCreateNoteArrayInsteadOfObject400"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Create note – array instead of object (400)" id="43c7f62c-17f7-46b0-9ea2-7e8d2ae86504" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.007">
+    <testcase name="Status is 400" time="0.007" classname="2NotesCrudAliceCreateNoteArrayInsteadOfObject400"/>
+    <testcase name="details.body explains the problem" time="0.007" classname="2NotesCrudAliceCreateNoteArrayInsteadOfObject400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes (200)" id="dbe6ce68-0179-43a8-890d-ec7245c6c3fe" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.011">
-    <testcase name="Status is 200" time="0.011" classname="2NotesCrudAliceListNotes200"/>
-    <testcase name="Returns only Alice's 2 notes" time="0.011" classname="2NotesCrudAliceListNotes200"/>
-    <testcase name="Newest first by default" time="0.011" classname="2NotesCrudAliceListNotes200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes (200)" id="c34be761-6543-41e6-9bb6-e6576d3ed005" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.411">
+    <testcase name="Status is 200" time="0.411" classname="2NotesCrudAliceListNotes200"/>
+    <testcase name="Returns only Alice's 2 notes" time="0.411" classname="2NotesCrudAliceListNotes200"/>
+    <testcase name="Newest first by default" time="0.411" classname="2NotesCrudAliceListNotes200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes – ?search (200)" id="3b945c1e-dbb7-4f07-88f1-6a7c1490e8a1" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.007">
-    <testcase name="Status is 200" time="0.007" classname="2NotesCrudAliceListNotesSearch200"/>
-    <testcase name="Finds the matching note only" time="0.007" classname="2NotesCrudAliceListNotesSearch200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes – ?search (200)" id="bbb7e536-c18c-4c39-bf3d-5a1e40a2d9df" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.430">
+    <testcase name="Status is 200" time="0.430" classname="2NotesCrudAliceListNotesSearch200"/>
+    <testcase name="Finds the matching note only" time="0.430" classname="2NotesCrudAliceListNotesSearch200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes – ?tag (200)" id="cc2b24ea-d416-4783-ba6d-ee68a27d0501" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.007">
-    <testcase name="Status is 200" time="0.007" classname="2NotesCrudAliceListNotesTag200"/>
-    <testcase name="Only notes with that tag" time="0.007" classname="2NotesCrudAliceListNotesTag200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes – ?tag (200)" id="ca2725c2-1f15-4638-9f95-b23427927a9f" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.377">
+    <testcase name="Status is 200" time="0.377" classname="2NotesCrudAliceListNotesTag200"/>
+    <testcase name="Only notes with that tag" time="0.377" classname="2NotesCrudAliceListNotesTag200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes – ?sort=oldest&amp;limit=1 (200)" id="1be9647c-6de7-46c7-880d-96872952a488" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.009">
-    <testcase name="Status is 200" time="0.009" classname="2NotesCrudAliceListNotesSortOldestAmpLimit1200"/>
-    <testcase name="Oldest note only" time="0.009" classname="2NotesCrudAliceListNotesSortOldestAmpLimit1200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes – ?sort=oldest&amp;limit=1 (200)" id="a5b91562-2833-45ae-b275-74a5308bc697" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.402">
+    <testcase name="Status is 200" time="0.402" classname="2NotesCrudAliceListNotesSortOldestAmpLimit1200"/>
+    <testcase name="Oldest note only" time="0.402" classname="2NotesCrudAliceListNotesSortOldestAmpLimit1200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes – regex characters are searched literally (200)" id="6bc57f85-b8bc-443d-b6cc-3d229dd0e0e8" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.006">
-    <testcase name="Status is 200" time="0.006" classname="2NotesCrudAliceListNotesRegexCharactersAreSearchedLiterally200"/>
-    <testcase name="No matches" time="0.006" classname="2NotesCrudAliceListNotesRegexCharactersAreSearchedLiterally200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes – regex characters are searched literally (200)" id="83286c8c-2964-49a4-aa6c-7b48e8b7a292" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.394">
+    <testcase name="Status is 200" time="0.394" classname="2NotesCrudAliceListNotesRegexCharactersAreSearchedLiterally200"/>
+    <testcase name="No matches" time="0.394" classname="2NotesCrudAliceListNotesRegexCharactersAreSearchedLiterally200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / List notes – invalid query (400)" id="18ab091b-cc3e-4dfe-9239-a383bc9423e6" timestamp="2026-11-05T18:24:40.952Z" tests="4" failures="0" errors="0" time="0.005">
-    <testcase name="Status is 400" time="0.005" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
-    <testcase name="Error message is &quot;Validation failed&quot;" time="0.005" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
-    <testcase name="details.sort explains the problem" time="0.005" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
-    <testcase name="details.limit explains the problem" time="0.005" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
+  <testsuite name="2 · Notes CRUD (Alice) / List notes – invalid query (400)" id="436554dc-e206-4dd9-bab7-9f9a15609dac" timestamp="2026-11-06T09:40:28.945Z" tests="4" failures="0" errors="0" time="0.007">
+    <testcase name="Status is 400" time="0.007" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
+    <testcase name="Error message is &quot;Validation failed&quot;" time="0.007" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
+    <testcase name="details.sort explains the problem" time="0.007" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
+    <testcase name="details.limit explains the problem" time="0.007" classname="2NotesCrudAliceListNotesInvalidQuery400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Get note by id (200)" id="08f454d5-5eb9-4d18-9cc7-eda939f393f9" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.013">
-    <testcase name="Status is 200" time="0.013" classname="2NotesCrudAliceGetNoteById200"/>
-    <testcase name="Returns the requested note" time="0.013" classname="2NotesCrudAliceGetNoteById200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Get note by id (200)" id="5a1a9cce-8ab4-4afc-a48a-05ac0276c65a" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.391">
+    <testcase name="Status is 200" time="0.391" classname="2NotesCrudAliceGetNoteById200"/>
+    <testcase name="Returns the requested note" time="0.391" classname="2NotesCrudAliceGetNoteById200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Get note – invalid id (400)" id="916c11bd-acd4-470b-8d62-d6c2b6ed1bb8" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.005">
-    <testcase name="Status is 400" time="0.005" classname="2NotesCrudAliceGetNoteInvalidId400"/>
-    <testcase name="Error message is &quot;Invalid note id&quot;" time="0.005" classname="2NotesCrudAliceGetNoteInvalidId400"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Get note – invalid id (400)" id="7b2b4a89-29c3-4a4b-84b3-e8e3d58c0b7e" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.003">
+    <testcase name="Status is 400" time="0.003" classname="2NotesCrudAliceGetNoteInvalidId400"/>
+    <testcase name="Error message is &quot;Invalid note id&quot;" time="0.003" classname="2NotesCrudAliceGetNoteInvalidId400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Get note – does not exist (404)" id="8f64fa5e-79f2-4924-9850-66ba3968db93" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.006">
-    <testcase name="Status is 404" time="0.006" classname="2NotesCrudAliceGetNoteDoesNotExist404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.006" classname="2NotesCrudAliceGetNoteDoesNotExist404"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Get note – does not exist (404)" id="55492dd4-b31e-4ccb-9217-2ba368044042" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.428">
+    <testcase name="Status is 404" time="0.428" classname="2NotesCrudAliceGetNoteDoesNotExist404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.428" classname="2NotesCrudAliceGetNoteDoesNotExist404"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT (200)" id="25b8b689-f6c7-4900-a349-44ea0a5e98ac" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.022">
-    <testcase name="Status is 200" time="0.022" classname="2NotesCrudAliceReplaceNotePut200"/>
-    <testcase name="Returns the new version" time="0.022" classname="2NotesCrudAliceReplaceNotePut200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT (200)" id="04be709a-bdfe-4fa0-8543-95982c9032ad" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.419">
+    <testcase name="Status is 200" time="0.419" classname="2NotesCrudAliceReplaceNotePut200"/>
+    <testcase name="Returns the new version" time="0.419" classname="2NotesCrudAliceReplaceNotePut200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT resets missing fields (200)" id="eef8a7e3-ccf3-42c3-a07f-7a6f67e85bfa" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.008">
-    <testcase name="Status is 200" time="0.008" classname="2NotesCrudAliceReplaceNotePutResetsMissingFields200"/>
-    <testcase name="Missing body and tags are gone" time="0.008" classname="2NotesCrudAliceReplaceNotePutResetsMissingFields200"/>
-    <testcase name="Owner is still Alice" time="0.008" classname="2NotesCrudAliceReplaceNotePutResetsMissingFields200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT resets missing fields (200)" id="a75b8551-e61f-47f2-9f36-f4cd8221076c" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.394">
+    <testcase name="Status is 200" time="0.394" classname="2NotesCrudAliceReplaceNotePutResetsMissingFields200"/>
+    <testcase name="Missing body and tags are gone" time="0.394" classname="2NotesCrudAliceReplaceNotePutResetsMissingFields200"/>
+    <testcase name="Owner is still Alice" time="0.394" classname="2NotesCrudAliceReplaceNotePutResetsMissingFields200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH body and tags (200)" id="623764b2-726a-444a-91e2-eeb7627a18bc" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.008">
-    <testcase name="Status is 200" time="0.008" classname="2NotesCrudAliceUpdateNotePatchBodyAndTags200"/>
-    <testcase name="Sent fields changed" time="0.008" classname="2NotesCrudAliceUpdateNotePatchBodyAndTags200"/>
-    <testcase name="Title left alone" time="0.008" classname="2NotesCrudAliceUpdateNotePatchBodyAndTags200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH body and tags (200)" id="5d974e22-d44d-4fbc-a994-179ea610826e" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.405">
+    <testcase name="Status is 200" time="0.405" classname="2NotesCrudAliceUpdateNotePatchBodyAndTags200"/>
+    <testcase name="Sent fields changed" time="0.405" classname="2NotesCrudAliceUpdateNotePatchBodyAndTags200"/>
+    <testcase name="Title left alone" time="0.405" classname="2NotesCrudAliceUpdateNotePatchBodyAndTags200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH title only keeps body (200)" id="8985ef83-ccc5-419c-a3d3-43e5af0c1c18" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.008">
-    <testcase name="Status is 200" time="0.008" classname="2NotesCrudAliceUpdateNotePatchTitleOnlyKeepsBody200"/>
-    <testcase name="Title changed" time="0.008" classname="2NotesCrudAliceUpdateNotePatchTitleOnlyKeepsBody200"/>
-    <testcase name="Body and tags kept" time="0.008" classname="2NotesCrudAliceUpdateNotePatchTitleOnlyKeepsBody200"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH title only keeps body (200)" id="eee6fcae-bcc4-49e9-bc9b-68dbced3c0e8" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="1.145">
+    <testcase name="Status is 200" time="1.145" classname="2NotesCrudAliceUpdateNotePatchTitleOnlyKeepsBody200"/>
+    <testcase name="Title changed" time="1.145" classname="2NotesCrudAliceUpdateNotePatchTitleOnlyKeepsBody200"/>
+    <testcase name="Body and tags kept" time="1.145" classname="2NotesCrudAliceUpdateNotePatchTitleOnlyKeepsBody200"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT without title (400)" id="5ddb8933-f59b-46c0-954f-537005ab00fa" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.006">
-    <testcase name="Status is 400" time="0.006" classname="2NotesCrudAliceReplaceNotePutWithoutTitle400"/>
-    <testcase name="Error message is &quot;Validation failed&quot;" time="0.006" classname="2NotesCrudAliceReplaceNotePutWithoutTitle400"/>
-    <testcase name="details.title explains the problem" time="0.006" classname="2NotesCrudAliceReplaceNotePutWithoutTitle400"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT without title (400)" id="8842e9b9-d62b-45bc-9ab5-6cf95d645d68" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.004">
+    <testcase name="Status is 400" time="0.004" classname="2NotesCrudAliceReplaceNotePutWithoutTitle400"/>
+    <testcase name="Error message is &quot;Validation failed&quot;" time="0.004" classname="2NotesCrudAliceReplaceNotePutWithoutTitle400"/>
+    <testcase name="details.title explains the problem" time="0.004" classname="2NotesCrudAliceReplaceNotePutWithoutTitle400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH with no fields (400)" id="5df84933-66eb-4ee4-891c-c643a69ed3fa" timestamp="2026-11-05T18:24:40.952Z" tests="3" failures="0" errors="0" time="0.004">
-    <testcase name="Status is 400" time="0.004" classname="2NotesCrudAliceUpdateNotePatchWithNoFields400"/>
-    <testcase name="Error message is &quot;Validation failed&quot;" time="0.004" classname="2NotesCrudAliceUpdateNotePatchWithNoFields400"/>
-    <testcase name="details.body explains the problem" time="0.004" classname="2NotesCrudAliceUpdateNotePatchWithNoFields400"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH with no fields (400)" id="cfe5c956-fc09-47b6-8079-791db0e5e4f7" timestamp="2026-11-06T09:40:28.945Z" tests="3" failures="0" errors="0" time="0.007">
+    <testcase name="Status is 400" time="0.007" classname="2NotesCrudAliceUpdateNotePatchWithNoFields400"/>
+    <testcase name="Error message is &quot;Validation failed&quot;" time="0.007" classname="2NotesCrudAliceUpdateNotePatchWithNoFields400"/>
+    <testcase name="details.body explains the problem" time="0.007" classname="2NotesCrudAliceUpdateNotePatchWithNoFields400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH empty title (400)" id="bea7835b-d33b-46a2-9408-c1da5046fdf2" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.007">
+  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH empty title (400)" id="8083991c-b85d-4ca5-b926-9414ccb7fbe4" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.007">
     <testcase name="Status is 400" time="0.007" classname="2NotesCrudAliceUpdateNotePatchEmptyTitle400"/>
     <testcase name="details.title explains the problem" time="0.007" classname="2NotesCrudAliceUpdateNotePatchEmptyTitle400"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT does not exist (404)" id="59de80dd-12e8-4bae-951c-755a88910a16" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.007">
-    <testcase name="Status is 404" time="0.007" classname="2NotesCrudAliceReplaceNotePutDoesNotExist404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.007" classname="2NotesCrudAliceReplaceNotePutDoesNotExist404"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Replace note – PUT does not exist (404)" id="3f7642d1-854a-4be4-b56d-053317375091" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.424">
+    <testcase name="Status is 404" time="0.424" classname="2NotesCrudAliceReplaceNotePutDoesNotExist404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.424" classname="2NotesCrudAliceReplaceNotePutDoesNotExist404"/>
   </testsuite>
-  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH does not exist (404)" id="2a572a99-e37c-414a-ba74-319d85da1fc9" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.009">
-    <testcase name="Status is 404" time="0.009" classname="2NotesCrudAliceUpdateNotePatchDoesNotExist404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.009" classname="2NotesCrudAliceUpdateNotePatchDoesNotExist404"/>
+  <testsuite name="2 · Notes CRUD (Alice) / Update note – PATCH does not exist (404)" id="54acee91-c2f2-4e36-8a1a-b79a1460058f" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.387">
+    <testcase name="Status is 404" time="0.387" classname="2NotesCrudAliceUpdateNotePatchDoesNotExist404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.387" classname="2NotesCrudAliceUpdateNotePatchDoesNotExist404"/>
   </testsuite>
-  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – list notes sees only his own (200)" id="b71da7b1-aadc-4e8d-9aa4-6f9c45318c22" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.012">
-    <testcase name="Status is 200" time="0.012" classname="3AuthorizationBobVsAlicesNoteBobListNotesSeesOnlyHisOwn200"/>
-    <testcase name="Bob has no notes" time="0.012" classname="3AuthorizationBobVsAlicesNoteBobListNotesSeesOnlyHisOwn200"/>
+  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – list notes sees only his own (200)" id="5d14a11b-33a9-49d2-a201-3c433df344f9" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.404">
+    <testcase name="Status is 200" time="0.404" classname="3AuthorizationBobVsAlicesNoteBobListNotesSeesOnlyHisOwn200"/>
+    <testcase name="Bob has no notes" time="0.404" classname="3AuthorizationBobVsAlicesNoteBobListNotesSeesOnlyHisOwn200"/>
   </testsuite>
-  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – GET Alice's note (404)" id="18e965a7-0d4f-47a7-8ad5-c0a715854476" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.005">
-    <testcase name="Status is 404" time="0.005" classname="3AuthorizationBobVsAlicesNoteBobGetAlicesNote404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.005" classname="3AuthorizationBobVsAlicesNoteBobGetAlicesNote404"/>
+  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – GET Alice's note (404)" id="db324fb1-25ed-4995-81be-7e7492049624" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.444">
+    <testcase name="Status is 404" time="0.444" classname="3AuthorizationBobVsAlicesNoteBobGetAlicesNote404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.444" classname="3AuthorizationBobVsAlicesNoteBobGetAlicesNote404"/>
   </testsuite>
-  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – PUT Alice's note (404)" id="ba913bfa-ed79-4aef-88e1-2bc1e5422804" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.013">
-    <testcase name="Status is 404" time="0.013" classname="3AuthorizationBobVsAlicesNoteBobPutAlicesNote404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.013" classname="3AuthorizationBobVsAlicesNoteBobPutAlicesNote404"/>
+  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – PUT Alice's note (404)" id="577c35b6-81e7-4a84-ad08-c00ffac339da" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.437">
+    <testcase name="Status is 404" time="0.437" classname="3AuthorizationBobVsAlicesNoteBobPutAlicesNote404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.437" classname="3AuthorizationBobVsAlicesNoteBobPutAlicesNote404"/>
   </testsuite>
-  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – PATCH Alice's note (404)" id="53c2fe23-e4fa-4f28-93cb-216b018e8353" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.007">
-    <testcase name="Status is 404" time="0.007" classname="3AuthorizationBobVsAlicesNoteBobPatchAlicesNote404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.007" classname="3AuthorizationBobVsAlicesNoteBobPatchAlicesNote404"/>
+  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – PATCH Alice's note (404)" id="5a69e72e-ec01-48d5-a731-a0b58032c465" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.417">
+    <testcase name="Status is 404" time="0.417" classname="3AuthorizationBobVsAlicesNoteBobPatchAlicesNote404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.417" classname="3AuthorizationBobVsAlicesNoteBobPatchAlicesNote404"/>
   </testsuite>
-  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – DELETE Alice's note (404)" id="7ca2e623-48da-458e-8455-c24fcca2d249" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.005">
-    <testcase name="Status is 404" time="0.005" classname="3AuthorizationBobVsAlicesNoteBobDeleteAlicesNote404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.005" classname="3AuthorizationBobVsAlicesNoteBobDeleteAlicesNote404"/>
+  <testsuite name="3 · Authorization (Bob vs Alice's note) / Bob – DELETE Alice's note (404)" id="0f02285d-6677-4b1d-be27-0679838c675f" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.425">
+    <testcase name="Status is 404" time="0.425" classname="3AuthorizationBobVsAlicesNoteBobDeleteAlicesNote404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.425" classname="3AuthorizationBobVsAlicesNoteBobDeleteAlicesNote404"/>
   </testsuite>
-  <testsuite name="3 · Authorization (Bob vs Alice's note) / Alice – note unchanged after Bob tried (200)" id="8ef6bb53-fe69-4014-9a6b-5150d9eee095" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.012">
-    <testcase name="Status is 200" time="0.012" classname="3AuthorizationBobVsAlicesNoteAliceNoteUnchangedAfterBobTried200"/>
-    <testcase name="Title was not changed by Bob" time="0.012" classname="3AuthorizationBobVsAlicesNoteAliceNoteUnchangedAfterBobTried200"/>
+  <testsuite name="3 · Authorization (Bob vs Alice's note) / Alice – note unchanged after Bob tried (200)" id="a7894240-824a-44fa-af58-c40cef6c5a47" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.388">
+    <testcase name="Status is 200" time="0.388" classname="3AuthorizationBobVsAlicesNoteAliceNoteUnchangedAfterBobTried200"/>
+    <testcase name="Title was not changed by Bob" time="0.388" classname="3AuthorizationBobVsAlicesNoteAliceNoteUnchangedAfterBobTried200"/>
   </testsuite>
-  <testsuite name="4 · Delete / Delete note (204)" id="c9d34df9-f119-4ce9-afc5-74997f54ee43" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.007">
-    <testcase name="Status is 204" time="0.007" classname="4DeleteDeleteNote204"/>
-    <testcase name="No body" time="0.007" classname="4DeleteDeleteNote204"/>
+  <testsuite name="4 · Delete / Delete note (204)" id="3a47fab3-f122-4b11-9d31-f5e153b2a1b6" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.370">
+    <testcase name="Status is 204" time="0.370" classname="4DeleteDeleteNote204"/>
+    <testcase name="No body" time="0.370" classname="4DeleteDeleteNote204"/>
   </testsuite>
-  <testsuite name="4 · Delete / Get deleted note (404)" id="1ed1e699-f7ef-4833-b3d0-73f18c5d5e21" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.006">
-    <testcase name="Status is 404" time="0.006" classname="4DeleteGetDeletedNote404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.006" classname="4DeleteGetDeletedNote404"/>
+  <testsuite name="4 · Delete / Get deleted note (404)" id="1fd1e86d-c52a-48ef-a7c8-c171283d2b56" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.353">
+    <testcase name="Status is 404" time="0.353" classname="4DeleteGetDeletedNote404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.353" classname="4DeleteGetDeletedNote404"/>
   </testsuite>
-  <testsuite name="4 · Delete / Delete again (404)" id="7aab763e-76e1-4359-9f04-e99cd7c95315" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.010">
-    <testcase name="Status is 404" time="0.010" classname="4DeleteDeleteAgain404"/>
-    <testcase name="Error message is &quot;Note not found&quot;" time="0.010" classname="4DeleteDeleteAgain404"/>
+  <testsuite name="4 · Delete / Delete again (404)" id="cc8aedbd-ba90-4941-ba4e-9308ac9d7d28" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.405">
+    <testcase name="Status is 404" time="0.405" classname="4DeleteDeleteAgain404"/>
+    <testcase name="Error message is &quot;Note not found&quot;" time="0.405" classname="4DeleteDeleteAgain404"/>
   </testsuite>
-  <testsuite name="4 · Delete / Delete – invalid id (400)" id="1e420775-3225-454b-a014-a0bbf784e52c" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.004">
-    <testcase name="Status is 400" time="0.004" classname="4DeleteDeleteInvalidId400"/>
-    <testcase name="Error message is &quot;Invalid note id&quot;" time="0.004" classname="4DeleteDeleteInvalidId400"/>
+  <testsuite name="4 · Delete / Delete – invalid id (400)" id="b7d9562c-cc75-4182-b80c-d2a6e21cd5f3" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="Status is 400" time="0.005" classname="4DeleteDeleteInvalidId400"/>
+    <testcase name="Error message is &quot;Invalid note id&quot;" time="0.005" classname="4DeleteDeleteInvalidId400"/>
   </testsuite>
-  <testsuite name="5 · Unknown routes / Unknown route (404)" id="c899c76d-0861-4644-a223-9752885746ad" timestamp="2026-11-05T18:24:40.952Z" tests="2" failures="0" errors="0" time="0.003">
-    <testcase name="Status is 404" time="0.003" classname="5UnknownRoutesUnknownRoute404"/>
-    <testcase name="JSON error body" time="0.003" classname="5UnknownRoutesUnknownRoute404"/>
+  <testsuite name="5 · Unknown routes / Unknown route (404)" id="bd67b30f-e351-43ab-8d20-665b2873a0bf" timestamp="2026-11-06T09:40:28.945Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="Status is 404" time="0.006" classname="5UnknownRoutesUnknownRoute404"/>
+    <testcase name="JSON error body" time="0.006" classname="5UnknownRoutesUnknownRoute404"/>
   </testsuite>
 </testsuites>
