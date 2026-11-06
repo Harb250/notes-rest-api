@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# secrets — never commit; .env.example documents the variables instead
+.env
+.env.*
+!.env.example
+
+# logs / OS / editor
+npm-debug.log*
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
